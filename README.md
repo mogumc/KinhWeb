@@ -18,4 +18,4 @@ GPL-2.0 license
 
 ## Warning
 This version is still developing.  
-If you want use this program,please use php version.  
+If you want use this program,please use the branche main.  
