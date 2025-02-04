@@ -48,9 +48,9 @@ func (t *LogFormatter) Format(entry *logrus.Entry) ([]byte, error) {
 	if entry.HasCaller() {
 		funcVal := entry.Caller.Function
 		fileVal := fmt.Sprintf("%s:%d", path.Base(entry.Caller.File), entry.Caller.Line)
-		fmt.Fprintf(b, "%s[%s] \x1b[%dm[%s]\x1b[0m %s %s: %s\n", log.Prefix, timestamp, levelColor, entry.Level, funcVal, fileVal, entry.Message)
+		fmt.Fprintf(b, "%s[%s] \033[%dm[%s]\033[0m %s %s: %s\n", log.Prefix, timestamp, levelColor, entry.Level, funcVal, fileVal, entry.Message)
 	} else {
-		fmt.Fprintf(b, "%s[%s] \x1b[%dm[%s]\x1b[0m %s\n", log.Prefix, timestamp, levelColor, entry.Level, entry.Message)
+		fmt.Fprintf(b, "%s[%s] \033[%dm[%s]\033[0m %s\n", log.Prefix, timestamp, levelColor, entry.Level, entry.Message)
 	}
 	return b.Bytes(), nil
 }

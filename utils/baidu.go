@@ -1,15 +1,15 @@
 // 百度类
 // @author MoGuQAQ
-// @version 1.0.1
+// @version 1.0.0
 
 package utils
 
 import (
-	"TeleBaidu/core"
-	"TeleBaidu/global"
 	"crypto/sha1"
 	"encoding/hex"
 	"encoding/json"
+	"kinhweb/core"
+	"kinhweb/global"
 	"strconv"
 	"strings"
 	"time"
@@ -38,13 +38,13 @@ func Getrand(bduss string) string {
 		global.Log = core.InitLogger()
 	}
 	Url := "https://wenku.baidu.com/customer/interface/vipinfo"
-	result := Get(Url, "netdisk;12.22.4.4", "BDUSS="+bduss)
+	result := Get(Url, "netdisk;11.0.0", "BDUSS="+bduss)
 	var JsonData map[string]interface{}
 	Time := strconv.FormatInt(time.Now().Unix(), 10)
 	if json.Unmarshal([]byte(result), &JsonData) == nil {
 		uid := JsonData["data"].(map[string]interface{})["uid"].(float64)
 		UserIDString := strconv.FormatInt(int64(uid), 10)
-		global.Log.Infof("UID->%s", UserIDString)
+		global.Log.Infof("UID->%d", UserIDString)
 		DevUIDSha1Byte := sha1.Sum([]byte(bduss))
 		DevUID := hex.EncodeToString(DevUIDSha1Byte[:])
 		BDUSSSha1Byte := sha1.Sum([]byte(bduss))
