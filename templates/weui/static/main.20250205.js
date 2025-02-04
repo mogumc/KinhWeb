@@ -222,6 +222,9 @@ function getDlink(type) {
     } else if (type == 'pot') {
         window.open('potplayer://' + dlink);
         msg('error', '获取下载地址成功');
+    } else if(type == 'play'){
+        msg('error', '获取下载地址成功');
+        return dlink;
     } else {
         var aux = document.createElement("input");
         aux.setAttribute("value", dlink);
@@ -247,7 +250,7 @@ function player() {
     } else if (ft == 1 || ft ==2) {
         dplayer(url);
         $('#meue').fadeOut(100);
-        $('#gallery').fadeIn(100)
+        $('#gallery').fadeIn(100);
     } else {
         msg('error', '不支持的预览格式');
     }
