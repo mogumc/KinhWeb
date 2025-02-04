@@ -241,7 +241,7 @@ function player() {
     var num = document.getElementById('meueid').getAttribute('value');
    var fid = document.getElementById('File_Fsid_' + num).getAttribute('value');
    var ft = document.getElementById('File_Type_' + num).getAttribute('value');
-    var url = getDlink();
+    var url = getDlink('play');
     msg('error', '预览准备中...');
     if (ft == 3) {
         document.getElementById('playerinfo').innerHTML = '<span id="galleryImg" alt="预览文件" role="img" class="weui-gallery__img" style="background-image: url(' + url + ');" tabindex="-1"></span>';
