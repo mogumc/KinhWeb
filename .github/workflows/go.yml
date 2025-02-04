@@ -31,8 +31,13 @@ jobs:
       - name: Install dependencies
         run: |
           go get .
+      - name: Build
+        run: go build -v ./...
         env:
           GOOS: ${{ matrix.goos }}
           GOARCH: ${{ matrix.goarch }} 
-      - name: Build
-        run: go build -v ./...
+          CGO_ENABLED: 0
+      - name: Upload Go test results
+        uses: actions/upload-artifact@v4
+        with:
+          name: KinhWeb.Go-${{ matrix.goos }}-${{ matrix.goarch }}
