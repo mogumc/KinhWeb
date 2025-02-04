@@ -32,7 +32,7 @@ jobs:
         run: |
           go get .
       - name: Build
-        run: go build -v ./...
+        run: go build -v -o KinhWeb.Go-${{ matrix.goos }}-${{ matrix.goarch }} .
         env:
           GOOS: ${{ matrix.goos }}
           GOARCH: ${{ matrix.goarch }} 
@@ -41,3 +41,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: KinhWeb.Go-${{ matrix.goos }}-${{ matrix.goarch }}
+          path: /home/runner/work/kinhweb
