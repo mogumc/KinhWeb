@@ -224,6 +224,7 @@ function getDlink(type) {
         msg('error', '获取下载地址成功');
     } else if(type == 'play'){
         msg('error', '获取下载地址成功');
+        $('#loading').fadeOut(100);
         return dlink;
     } else {
         var aux = document.createElement("input");
