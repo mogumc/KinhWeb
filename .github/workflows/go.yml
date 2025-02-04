@@ -35,4 +35,4 @@ jobs:
           GOOS: ${{ matrix.goos }}
           GOARCH: ${{ matrix.goarch }} 
       - name: Build
-        run: go build kinhweb
+        run: go build -v ./...
