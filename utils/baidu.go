@@ -44,7 +44,7 @@ func Getrand(bduss string) string {
 	if json.Unmarshal([]byte(result), &JsonData) == nil {
 		uid := JsonData["data"].(map[string]interface{})["uid"].(float64)
 		UserIDString := strconv.FormatInt(int64(uid), 10)
-		global.Log.Infof("UID->%d", UserIDString)
+		global.Log.Infof("UID->%s", UserIDString)
 		DevUIDSha1Byte := sha1.Sum([]byte(bduss))
 		DevUID := hex.EncodeToString(DevUIDSha1Byte[:])
 		BDUSSSha1Byte := sha1.Sum([]byte(bduss))
