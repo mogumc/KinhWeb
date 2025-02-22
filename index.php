@@ -402,7 +402,7 @@ if($nulldir==1){ ?>
     <br>
     <div class="weui-footer">
             <p class="weui-footer__text"><?php print(FOOT); ?></p>
-            <p class="weui-footer__text">Copyright © 2019-2024 MoGuQAQ Powered By KinhWeb <?php print(VERSION); ?></p>
+            <p class="weui-footer__text">Copyright © 2019-2025 MoGuQAQ Powered By KinhWeb <?php print(VERSION); ?></p>
         </div>      
     </body>
 </html>
